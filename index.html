@@ -1,60 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <title>Book Inventory</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Night Shelf — Book Inventory</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Special+Elite&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 </head>
-
 <body>
-    <h1>Book Inventory</h1>
-    <table>
+
+  <!-- Ambient window glow (Nighthawks inspiration) -->
+  <div class="window-glow"></div>
+  <div class="window-glow-inner"></div>
+
+  <header>
+    <div class="header-inner">
+      <p class="header-tagline">est. late nights & good reads</p>
+      <h1>The Night Shelf</h1>
+      <p class="header-sub">A personal reading inventory — 7 books, one journey</p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Legend -->
+    <div class="legend-bar">
+      <span class="status-badge read">● Read</span>
+      <span class="status-badge in-progress">● In Progress</span>
+      <span class="status-badge to-read">● To Read</span>
+    </div>
+
+    <!-- Book Inventory Table -->
+    <div class="table-wrapper">
+      <table id="book-inventory">
         <thead>
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Category</th>
-                <th>Status</th>
-                <th>Rate</th>
-            </tr>
+          <tr>
+            <th>#</th>
+            <th>Title &amp; Author</th>
+            <th>Status</th>
+            <th>Format</th>
+            <th>Source</th>
+            <th>Priority</th>
+            <th>Bookseller's Pitch</th>
+          </tr>
         </thead>
         <tbody>
-            <tr class="read">
-                <td><span class="status">Read</span></td>
-                <td><span class="status">Read</span></td>           
-                <td><span class="status">Read</span></td>
-                <td><span class="status">Read</span></td>
-                <td><span class="rate one status">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Read</span></td>
-            </tr>
-            <tr class="to-read">
-                <td><span class="status">To Read</span></td>
-                <td><span class="status">To Read</span></td>
-                <td><span class="status">To Read</span></td>
-                <td><span class="status">To Read</span></td>
-                <td><span class="rate one status">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    To Read</span></td>
-            </tr>
-            <tr class="in-progress">
-                <td><span class="status">In Progress</span></td>
-                <td><span class="status">In Progress</span></td>
-                <td><span class="status">In Progress</span></td>
-                <td><span class="status">In Progress</span></td>
-                <td><span class="rate one status">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    In Progress</span></td>
-            </tr>
-        </tbody>
-    </table>
-</body>
 
+          <tr class="row-read">
+            <td class="rank-cell">1</td>
+            <td class="book-title-cell">
+              <span class="title">The Alchemist</span>
+              <span class="author">Paulo Coelho</span>
+            </td>
+            <td><span class="status-badge read">Read</span></td>
+            <td>Print</td>
+            <td>Bought</td>
+            <td><span class="priority">4</span></td>
+            <td class="pitch">A short fable that carries enormous weight — if you've ever second-guessed chasing your own path, this book will light a fire under you again.</td>
+          </tr>
+
+          <tr class="row-read">
+            <td class="rank-cell">2</td>
+            <td class="book-title-cell">
+              <span class="title">The Laws of Human Nature</span>
+              <span class="author">Robert Greene</span>
+            </td>
+            <td><span class="status-badge read">Read</span></td>
+            <td>eBook</td>
+            <td>Bought</td>
+            <td><span class="priority">5</span></td>
+            <td class="pitch">Greene dissects why people behave the way they do — reading this changes how you observe everyone around you, from your coworkers to yourself.</td>
+          </tr>
+
+          <tr class="row-read">
+            <td class="rank-cell">3</td>
+            <td class="book-title-cell">
+              <span class="title">DSM-5</span>
+              <span class="author">American Psychiatric Association</span>
+            </td>
+            <td><span class="status-badge read">Read</span></td>
+            <td>Print</td>
+            <td>Bought</td>
+            <td><span class="priority">6</span></td>
+            <td class="pitch">The definitive clinical reference for understanding the full spectrum of mental health — dense, but transformative for anyone serious about psychology.</td>
+          </tr>
+
+          <tr class="row-read">
+            <td class="rank-cell">4</td>
+            <td class="book-title-cell">
+              <span class="title">Can't Hurt Me</span>
+              <span class="author">David Goggins</span>
+            </td>
+            <td><span class="status-badge read">Read</span></td>
+            <td>Audiobook</td>
+            <td>Borrowed</td>
+            <td><span class="priority">7</span></td>
+            <td class="pitch">Goggins doesn't motivate you — he confronts you, and that's exactly what makes this memoir one of the most brutally honest reads about human potential.</td>
+          </tr>
+
+          <tr class="row-in-progress">
+            <td class="rank-cell">5</td>
+            <td class="book-title-cell">
+              <span class="title">Mastery</span>
+              <span class="author">Robert Greene</span>
+            </td>
+            <td><span class="status-badge in-progress">In Progress</span></td>
+            <td>Print</td>
+            <td>Bought</td>
+            <td><span class="priority">3</span></td>
+            <td class="pitch">Greene maps out the hidden path that history's greatest minds followed — and shows you it's a path you can walk too, one deliberate step at a time.</td>
+          </tr>
+
+          <tr class="row-to-read">
+            <td class="rank-cell">6</td>
+            <td class="book-title-cell">
+              <span class="title">To Kill a Mockingbird</span>
+              <span class="author">Harper Lee</span>
+            </td>
+            <td><span class="status-badge to-read">To Read</span></td>
+            <td>Print</td>
+            <td>Library</td>
+            <td><span class="priority">2</span></td>
+            <td class="pitch">Through the eyes of a child in the American South, Lee crafts a story about justice and moral courage that still cuts deep decades later.</td>
+          </tr>
+
+          <tr class="row-to-read">
+            <td class="rank-cell">7</td>
+            <td class="book-title-cell">
+              <span class="title">1984</span>
+              <span class="author">George Orwell</span>
+            </td>
+            <td><span class="status-badge to-read">To Read</span></td>
+            <td>eBook</td>
+            <td>Library</td>
+            <td><span class="priority">1</span></td>
+            <td class="pitch">Orwell's chilling vision of a surveillance state feels less like fiction every year — essential reading for anyone who values freedom of thought.</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Reflection Section -->
+    <section class="reflection" id="why-these-books">
+      <div class="reflection-inner">
+        <div class="section-label">— reflection —</div>
+        <h2>Why These Books?</h2>
+        <p>
+          Every book on this list was chosen with intention. From Coelho's quiet reminder to follow your dreams, to Greene's clinical study of power and mastery, to Goggins' raw account of mental toughness — this shelf represents a pursuit of self-understanding and growth. The DSM-5 grounds the more philosophical reads in something empirical: a recognition that understanding human nature means understanding the mind in all its forms, broken and whole. Together, these books form a map of who I want to become — sharper, more self-aware, more resilient.
+        </p>
+        <p>
+          The two books next in line — <em>To Kill a Mockingbird</em> and <em>1984</em> — are intentional shifts in direction. After months of non-fiction focused on personal development, I want to let great literature stretch my thinking differently. Orwell's <em>1984</em> is ranked first because its themes of control and truth feel urgently relevant right now. Lee's novel follows because moral courage is a thread that runs through everything else I've been reading — and she explores it better than almost anyone. These aren't just classics to check off a list; they're conversations I'm finally ready to have.
+        </p>
+      </div>
+    </section>
+
+  </main>
+</body>
 </html>
